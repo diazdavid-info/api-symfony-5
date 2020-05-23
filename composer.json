@@ -58,6 +58,8 @@
             "allow-contrib": false,
             "require": "5.0.*"
         },
-        "public-dir": "app/public"
+        "public-dir": "app/public",
+        "bin-dir": "app/bin",
+        "config-dir": "app/config"
     }
 }
