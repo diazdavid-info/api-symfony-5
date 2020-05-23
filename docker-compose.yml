@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  php-apache:
+    image: diazdavid/dev-symfony-5:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/usr/src/api-symfony-5
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9013 remote_enable=1
+    entrypoint: ["symfony", "server:start" , "--document-root=/usr/src/api-symfony-5/app/public"]
+    networks:
+      - api-symfony-5
+
+networks:
+  api-symfony-5:
